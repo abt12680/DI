@@ -28,4 +28,4 @@ git clone https://github.com/rosywrt/luci-theme-rosy.git ./package/feeds/luci/th
 # 调用diy目录下的文件，包括zzz-default-settings文件
 #cd openwrt
 #cp -Rf ../diy/* ./
-cp -Rf ./diy/package/lean/default-settings/files/zzz-default-settings ./
+
