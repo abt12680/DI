@@ -72,7 +72,7 @@ jobs:
 #        cd openwrt-packages
 #        git clone https://github.com/openwrt-develop/luci-theme-atmaterial.git
 #        git clone https://github.com/rosywrt/luci-theme-rosy.git
-
+#     创建同步私库文件ACCESS_TOKEN  https://github.com/settings/tokens
 #   - name: 同步私库文件
 #      env: 
 #        token: ${{ secrets.ACCESS_TOKEN }}  
