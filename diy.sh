@@ -26,6 +26,10 @@ git clone https://github.com/rosywrt/luci-theme-rosy.git ./package/feeds/luci/th
 # sed 's/WPA/WPA2/a\set wireless.default_radio${devidx}.key=password/g' package/kernel/mac80211/files/lib/wifi/mac80211.sh
 
 # 调用diy目录下的文件，包括zzz-default-settings文件
-#cd openwrt
-#cp -Rf ../diy/* ./
+cd openwrt
+cp -Rf ../diy/* ./
+cp -f default-settings package/*/*/default-settings/files/zzz-default-settings
+if [ -n "$(ls -A "patches" 2>/dev/null)" ]; then
+   find "patches" -type f -name '*.patch'| xargs -i git apply {}
+fi
 
