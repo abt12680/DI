@@ -8,7 +8,7 @@ uci set system.@system[0].timezone=CST-8
 uci set system.@system[0].zonename=Asia/Shanghai
 uci commit system
 
-sed -i 's/root:.*/root:$1$PgqmDetr$xqXbP57ysPKh9m36oycQS\/:18361:0:99999:7:::/g' /etc/shadow
+#sed -i 's/root:.*/root:$1$PgqmDetr$xqXbP57ysPKh9m36oycQS\/:18361:0:99999:7:::/g' /etc/shadow
 
 # @wifi-iface[0] 表示2.4G网络；@wifi-iface[1] 表示5G网络
 # uci set wireless.@wifi-iface[0].ssid='OperWrt'
