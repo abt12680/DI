@@ -20,5 +20,10 @@ git clone https://github.com/rosywrt/luci-theme-rosy.git ./package/feeds/luci/th
 ./scripts/feeds install -a
 
 # 调用diy目录下的文件，包括zzz-default-settings文件
-#cd openwrt
-#cp -Rf ../diy/* ./
+cd openwrt
+cp -Rf ../diy/* ./
+cp -f default-settings package/*/*/default-settings/files/zzz-default-settings
+if [ -n "$(ls -A "patches" 2>/dev/null)" ]; then
+   find "patches" -type f -name '*.patch'| xargs -i git apply {}
+fi
+
