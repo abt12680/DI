@@ -20,5 +20,5 @@ git clone https://github.com/rosywrt/luci-theme-rosy.git ./package/feeds/luci/th
 ./scripts/feeds install -a
 
 # 调用diy目录下的文件，包括zzz-default-settings文件
-cd openwrt
+#cd openwrt
 cp -Rf ../diy/* ./
