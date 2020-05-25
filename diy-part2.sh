@@ -19,4 +19,4 @@ git clone https://github.com/rosywrt/luci-theme-rosy.git ./package/feeds/luci/th
 ./scripts/feeds update -a
 ./scripts/feeds install -a
 
-cp -Rf ../diy/* ./
+#cp -Rf ../diy/* ./
