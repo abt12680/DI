@@ -176,25 +176,25 @@ jobs:
         echo "::set-output name=date::$(date +'%m/%d_%Y_%H/%M')"
         echo "::set-output name=date2::$(date +'%m/%d %Y')"
       
-    - name: Create release 创建release
-      id: create_release
-      uses: actions/create-release@master
-      if: steps.compile.outputs.status == 'success' && env.UPLOAD_RELEASE == 'true' && !cancelled()
-      env:
-        GITHUB_TOKEN: ${{ secrets.ACCESS_TOKEN }}
-      with:
-        tag_name: ${{steps.date.outputs.date}}_${{ env.TARGET }}
-        release_name: ${{steps.date.outputs.date2}} ${{ env.TARGET }}
-        draft: false
-        prerelease: false     
+#    - name: Create release 创建release
+#      id: create_release
+#      uses: actions/create-release@master
+#      if: steps.compile.outputs.status == 'success' && env.UPLOAD_RELEASE == 'true' && !cancelled()
+#      env:
+#        GITHUB_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+#      with:
+#        tag_name: ${{steps.date.outputs.date}}_${{ env.TARGET }}
+#        release_name: ${{steps.date.outputs.date2}} ${{ env.TARGET }}
+#        draft: false
+#        prerelease: false     
 
-    - name: Upload release asset 发布release
-      uses: csexton/release-asset-action@master
-      if: steps.compile.outputs.status == 'success' && env.UPLOAD_RELEASE == 'true' && !cancelled()
-      with:
-        pattern: "${{ env.FIRMWARE }}/*"
-        github-token: ${{ secrets.ACCESS_TOKEN }}
-        release-url: ${{ steps.create_release.outputs.upload_url }}
+#    - name: Upload release asset 发布release
+#      uses: csexton/release-asset-action@master
+#      if: steps.compile.outputs.status == 'success' && env.UPLOAD_RELEASE == 'true' && !cancelled()
+#      with:
+#        pattern: "${{ env.FIRMWARE }}/*"
+#        github-token: ${{ secrets.ACCESS_TOKEN }}
+#        release-url: ${{ steps.create_release.outputs.upload_url }}
 
     - name: 将固件上传到 Cowtransfer
       if: steps.organize.outputs.status == 'success' && env.UPLOAD_COWTRANSFER == 'true' && !cancelled()
