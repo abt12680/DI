@@ -16,6 +16,7 @@ sed -i 's/192.168.1.1/192.168.2.1/g' package/base-files/files/bin/config_generat
 git clone https://github.com/jerrykuku/luci-theme-argon -b 19.07_stable ./package/feeds/luci/themes
 git clone https://github.com/openwrt-develop/luci-theme-atmaterial.git ./package/feeds/luci/themes
 git clone https://github.com/rosywrt/luci-theme-rosy.git ./package/feeds/luci/themes
+git clone https://github.com/apollo-ng/luci-theme-darkmatter.git ./package/luci-theme-darkmatter
 ./scripts/feeds update -a
 ./scripts/feeds install -a
 
